@@ -6,7 +6,7 @@ import clsx from 'clsx';
 import Button from '@mui/material/Button';
 import AddShoppingCartIcon from '@mui/icons-material/AddShoppingCart';
 import {useCart} from 'boundless-commerce-components/dist/client';
-
+ 
 export default function AddToCart({itemId, className, disabled}: {itemId?: number, className?: string, disabled?: boolean}) {
 	const [qty, setQty] = useState<number>(1);
 	const {cartId, addToCart} = useCart();

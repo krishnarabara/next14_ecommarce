@@ -1,9 +1,9 @@
-import {IProductItem, IVariant} from 'boundless-api-client';
- import clsx from 'clsx';
-import {useFormatCurrency, IBasicSettings, IPriceForTpl, getPriceForTpl, findSellingPrice} from 'boundless-commerce-components';
+import { IProductItem, IVariant } from 'boundless-api-client';
+import { IBasicSettings, IPriceForTpl, findSellingPrice, getPriceForTpl, useFormatCurrency } from 'boundless-commerce-components';
+import clsx from 'clsx';
 import currency from 'currency.js';
-import {useMemo} from 'react';
-
+import { useMemo } from 'react';
+// sku stock keeping unit
 export default function PriceAndSku({product, variant, className, settings}: IProps) {
 	const {formatCurrency} = useFormatCurrency({settings});
 	const {price, benefit, isInStock} = useMemo(() => {
