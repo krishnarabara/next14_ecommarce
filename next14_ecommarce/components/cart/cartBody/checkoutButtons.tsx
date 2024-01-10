@@ -1,12 +1,12 @@
 import Button from '@mui/material/Button';
 import {useCart} from 'boundless-commerce-components/dist/client';
 import {useCallback, useState} from 'react';
-import {apiClient} from '@/lib/api';
+import { apiClient } from '../../../lib/api';
 import Alert from '@mui/material/Alert';
 import AlertTitle from '@mui/material/AlertTitle';
 import Snackbar from '@mui/material/Snackbar';
 import {useRouter} from 'next/navigation';
-import CustomCheckoutDialog from '@/components/checkout/customCheckoutDialog';
+import CustomCheckoutDialog from '../../checkout/customCheckoutDialog';
 
 export default function CheckoutButtons() {
 	const {isLoading, error, clearError, onBoundlessCheckoutClicked, onCustomerCheckoutClicked,
@@ -78,7 +78,7 @@ const useBtnsHandlers = () => {
 		clearError();
 		return apiClient.createRequest().post(`/orders/cart/${cartId}/validate`)
 			.then(() => true)
-			.catch((e) => {
+			.catch((e: { response: { data: { message: string; }[]; }; }) => {
 				if (e.response && Array.isArray(e.response.data) && e.response.data[0]?.message) {
 					setError(e.response.data[0].message as string);
 				}
@@ -88,7 +88,7 @@ const useBtnsHandlers = () => {
 	}, [cartId, clearError]);
 
 	const onBoundlessCheckoutClicked = useCallback(() => {
-		validateCart().then((result) => {
+		validateCart().then((result: boolean) => {
 			if (result === true) {
 				router.push('/boundless-checkout/info');
 			}
@@ -96,7 +96,7 @@ const useBtnsHandlers = () => {
 	}, [validateCart, router]);
 
 	const onCustomerCheckoutClicked = useCallback(() => {
-		validateCart().then((result) => {
+		validateCart().then((result: boolean) => {
 			if (result === true) {
 				setShowCustomCheckout(true);
 			}
@@ -104,7 +104,7 @@ const useBtnsHandlers = () => {
 	}, [validateCart, setShowCustomCheckout]);
 
 	const onStripeCheckoutClicked = useCallback(() => {
-		validateCart().then((result) => {
+		validateCart().then((result: boolean) => {
 			if (result === true) {
 				router.push('/stripe/checkout');
 			}

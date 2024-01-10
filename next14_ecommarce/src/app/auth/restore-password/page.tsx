@@ -3,8 +3,9 @@
 import {useCustomer} from 'boundless-commerce-components/dist/client';
 import {useRouter} from 'next/navigation';
 import {useEffect} from 'react';
-import LoadingScreen from '@/components/loadingScreen';
-import RestorePasswordForm from '@/components/auth/restorePasswordForm';
+import LoadingScreen from '../../../../components/loadingScreen';
+import RestorePasswordForm from '../../../../components/auth/restorePasswordForm';
+
 
 export default function RestorePasswordPage() {
 	const {customer, customerIsInited} = useCustomer();
@@ -25,7 +26,9 @@ export default function RestorePasswordPage() {
 			<h1 className={'mb-4'}>Forgot Password?</h1>
 			<div className={'row'}>
 				<div className={'col-md-6 offset-md-3 col-xl-4 offset-xl-4'}>
-					<RestorePasswordForm />
+					<RestorePasswordForm params={{
+						slug: ''
+					}} />
 				</div>
 			</div>
 		</div>

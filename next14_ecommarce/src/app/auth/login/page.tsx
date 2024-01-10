@@ -1,8 +1,7 @@
 'use client';
-
-import LoginForm from '@/components/auth/loginForm';
+import LoginForm from '../../../../components/auth/loginForm';
 import {useCustomer} from 'boundless-commerce-components/dist/client';
-import LoadingScreen from '@/components/loadingScreen';
+import LoadingScreen from '../../../../components/loadingScreen';
 import {useEffect} from 'react';
 import { useRouter } from 'next/navigation';
 

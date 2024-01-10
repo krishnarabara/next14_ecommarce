@@ -1,5 +1,6 @@
-import {nativeFetch, revalidate} from '@/lib/api';
+
 import {IBasicSettings} from 'boundless-commerce-components';
+import { nativeFetch, revalidate } from './api';
 
 export const fetchBasicSettings = async (): Promise<Required<IBasicSettings>> => {
 	// &keys[]=system.currency

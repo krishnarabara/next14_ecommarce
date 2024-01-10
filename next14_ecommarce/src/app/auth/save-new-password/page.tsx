@@ -1,4 +1,4 @@
-import SaveNewPasswordForm from '@/components/auth/saveNewPasswordForm';
+import SaveNewPasswordForm from "../../../../components/auth/saveNewPasswordForm";
 
 export default function SaveNewPasswordPage() {
 	return (

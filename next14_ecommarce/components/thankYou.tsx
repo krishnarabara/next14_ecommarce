@@ -1,9 +1,9 @@
 'use client';
 
-import {StarterWrapper, startOrderInfo} from 'boundless-checkout-react';
-import {useParams} from 'next/navigation';
-import {useRef, useCallback} from 'react';
-import {apiClient} from '@/lib/api';
+import { StarterWrapper } from 'boundless-checkout-react';
+import { useParams } from 'next/navigation';
+import { useCallback, useRef } from 'react';
+import { apiClient } from '../lib/api';
 
 export default function ThankYou() {
 	const params = useParams();
@@ -21,7 +21,7 @@ export default function ThankYou() {
 
 	if (!params.id) {
 		return null;
-	}
+	}                                
 
 	return (
 		<div>
@@ -30,3 +30,7 @@ export default function ThankYou() {
 		</div>
 	);
 }
+function startOrderInfo(node: HTMLDivElement, arg1: { orderId: string; api: any; onError: (error: any) => void; }): any {
+	throw new Error('Function not implemented.');
+}
+

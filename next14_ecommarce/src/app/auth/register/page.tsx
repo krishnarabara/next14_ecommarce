@@ -1,8 +1,8 @@
 'use client';
 
-import RegisterForm from '@/components/auth/registerForm';
+import RegisterForm from '../../../../components/auth/registerForm';
 import {useCustomer} from 'boundless-commerce-components/dist/client';
-import LoadingScreen from '@/components/loadingScreen';
+import LoadingScreen from '../../../../components/loadingScreen';
 import {useEffect} from 'react';
 import { useRouter } from 'next/navigation';
 
@@ -27,7 +27,7 @@ export default function RegisterPage() {
 				<div className={'col-md-6 offset-md-3 col-xl-4 offset-xl-4'}>
 					<RegisterForm />
 				</div>
-			</div>
+			</div>// import LoadingScreen from '@/components/loadingScreen';
 		</div>
 	);
 }

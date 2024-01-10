@@ -1,15 +1,15 @@
 import {Form, Formik, FormikHelpers, useFormikContext} from 'formik';
 import Alert from '@mui/material/Alert';
 import TextField from '@mui/material/TextField';
-import {apiErrors2Formik, formikFieldAttrs, TApiErrors} from '@/lib/formUtils';
+import { TApiErrors, apiErrors2Formik, formikFieldAttrs } from '../../../lib/formUtils';
 import {useCallback, useState} from 'react';
 import Button from '@mui/material/Button';
 import CheckIcon from '@mui/icons-material/Check';
-// import DialogContentText from '@mui/material/DialogContentText';
-import {apiClient} from '@/lib/api';
+import DialogContentText from '@mui/material/DialogContentText';
+import { apiClient } from '../../../lib/api';
 import {AxiosError} from 'axios';
 import {useCart, useCustomer} from 'boundless-commerce-components/dist/client';
-import ErrorSummary from '@/components/errorSummary';
+import ErrorSummary from '../../errorSummary';
 import CircularProgress from '@mui/material/CircularProgress';
 import {ICustomer} from 'boundless-api-client';
 
@@ -31,7 +31,7 @@ export default function OrderForm() {
 		<div>
 			<p>Fill out the following Form:</p>
 			<Formik initialValues={getInitialValues(customer)} onSubmit={onSubmit}>
-				{(formikProps) => (
+				{(formikProps: { values: { contact: { first_name: unknown; email: unknown; phone: unknown; }; }; isSubmitting: boolean | undefined; }) => (
 					<Form>
 						<ErrorSummary />
 						<div className={'my-3'}>

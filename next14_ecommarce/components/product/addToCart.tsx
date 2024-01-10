@@ -1,7 +1,7 @@
 'use client';
 
 import {useCallback, useMemo, useState} from 'react';
-import SpecifyQty from '@/components/product/addToCart/specifyQty';
+import SpecifyQty from './addToCart/specifyQty';
 import clsx from 'clsx';
 import Button from '@mui/material/Button';
 import AddShoppingCartIcon from '@mui/icons-material/AddShoppingCart';

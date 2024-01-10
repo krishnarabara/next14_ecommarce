@@ -7,7 +7,7 @@ import AddCircleOutlineIcon from '@mui/icons-material/AddCircleOutline';
 import RemoveCircleOutlineIcon from '@mui/icons-material/RemoveCircleOutline';
 import DeleteIcon from '@mui/icons-material/Delete';
 import TextField from '@mui/material/TextField';
-import {apiClient} from '@/lib/api';
+import { apiClient } from '../../../../lib/api';
 import currency from 'currency.js';
 import styles from './cartItems.module.css';
 import clsx from 'clsx';

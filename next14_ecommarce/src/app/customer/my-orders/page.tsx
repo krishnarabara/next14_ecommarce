@@ -1,6 +1,6 @@
 import {Metadata} from 'next';
-import MyOrders from '@/components/myOrders';
-import {fetchBasicSettings} from '@/lib/settings';
+import { fetchBasicSettings } from '../../../../lib/settings';
+import MyOrders from '../../../../components/myOrders';
 
 export default async function MyOrdersPage() {
 	const settings = await fetchBasicSettings();

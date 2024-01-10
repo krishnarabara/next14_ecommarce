@@ -1,5 +1,5 @@
 import {Metadata} from 'next';
-import BoundlessCheckout from '@/components/checkout/boundlessCheckout';
+import BoundlessCheckout from '../../../components/checkout/customCheckoutDialog/boundlessCheckout';
 
 export default function BoundlessCheckoutPage() {
 	return (

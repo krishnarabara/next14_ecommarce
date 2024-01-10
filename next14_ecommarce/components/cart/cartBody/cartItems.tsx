@@ -4,10 +4,9 @@ import {Dispatch, SetStateAction, useCallback} from 'react';
 import {useCart} from 'boundless-commerce-components/dist/client';
 import {useFormatCurrency,IBasicSettings} from 'boundless-commerce-components';
 import clsx from 'clsx';
-import CartRow from '@/components/cart/cartBody/cartItems/cartRow';
-import _debounce from 'lodash/debounce';
-import {apiClient} from '@/lib/api';
-import CartTotalRow from '@/components/cart/cartBody/cartTotalRow';
+import CartRow from './cartItems/cartRow';
+import { apiClient } from '../../../lib/api';
+import CartTotalRow from './cartTotalRow';
 
 export default function CartItems({items, setItems, settings, className}: ICartItemsProps) {
 	const {changeQty, rmItem} = useCartManager({setItems});
@@ -45,7 +44,7 @@ const useCartManager = ({setItems}: Pick<ICartItemsProps, 'setItems'>) => {
 		}
 
 		apiClient.cart.setCartItemsQty(cartId, items)
-			.catch(e => console.error('Err on cart update:', e))
+			.catch((e: any) => console.error('Err on cart update:', e))
 		;
 	}, 700), [cartId]);
 
@@ -97,3 +96,7 @@ interface ICartItemsProps {
 	settings: IBasicSettings;
 	className?: string;
 }
+function _debounce(arg0: (items: IItemsQty[]) => void, arg1: number): any {
+	throw new Error('Function not implemented.');
+}
+

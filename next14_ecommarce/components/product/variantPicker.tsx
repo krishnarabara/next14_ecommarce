@@ -3,9 +3,10 @@
 import {useState, useCallback} from 'react';
 import {ProductVariantPicker} from 'boundless-commerce-components/dist/client';
 import {IProductItem, IVariant} from 'boundless-api-client';
-import AddToCart from '@/components/product/addToCart';
+import AddToCart from './addToCart';
 import {IBasicSettings} from 'boundless-commerce-components';
-import PriceAndSku from '@/components/product/priceAndSku';
+import PriceAndSku from './price';
+
 
 export default function VariantPicker({product, settings}: {product: IProductItem, settings?: IBasicSettings}) {
 	const [selectedVariant, setSelectedVariant] = useState<IVariant|undefined>();

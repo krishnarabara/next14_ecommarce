@@ -1,6 +1,6 @@
 import {Metadata} from 'next';
-import CartBody from '@/components/cart/cartBody';
-import {fetchBasicSettings} from '@/lib/settings';
+import { fetchBasicSettings } from '../../../lib/settings';
+import CartBody from '../../../components/cart/cartBody';
 
 export default async function CartPage() {
 	const settings = await fetchBasicSettings();

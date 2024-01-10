@@ -1,14 +1,14 @@
 'use client';
 
 import {useState, useEffect, useCallback} from 'react';
-import CartLoader from '@/components/cart/cartLoader';
+import CartLoader from './cartLoader';
 import {useCart} from 'boundless-commerce-components/dist/client';
 import {ICartItem} from 'boundless-api-client';
-import {apiClient} from '@/lib/api';
-import EmptyCart from '@/components/cart/cartBody/emptyCart';
+import { apiClient } from '../../lib/api';
+import EmptyCart from './cartBody/emptyCart';
 import {IBasicSettings} from 'boundless-commerce-components';
-import CartItems from '@/components/cart/cartBody/cartItems';
-import CheckoutButtons from '@/components/cart/cartBody/checkoutButtons';
+import CartItems from './cartBody/cartItems';
+import CheckoutButtons from './cartBody/checkoutButtons';
 
 export default function CartBody({settings}: {settings: IBasicSettings}) {
 	const {cartId} = useCart();
@@ -47,10 +47,10 @@ const useFetchCartItems = () => {
 
 		setIsLoading(true);
 		apiClient.cart.getCartItems(cartId)
-			.then(({cart, items}) => {
+			.then(({items}) => {
 				setItems(items);
 			})
-			.catch((err) => console.error(err))
+			.catch((err: any) => console.error(err))
 			.finally(() => setIsLoading(false));
 	}, [cartId]);
 

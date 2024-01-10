@@ -3,8 +3,8 @@
 import {useCustomer} from 'boundless-commerce-components/dist/client';
 import {useRouter} from 'next/navigation';
 import {useEffect, useState} from 'react';
-import LoadingScreen from '@/components/loadingScreen';
-import {apiClient} from '@/lib/api';
+import { apiClient } from '../lib/api';
+import LoadingScreen from './loadingScreen';
 import {IAdminOrderInList} from 'boundless-api-client';
 import Button from '@mui/material/Button';
 import Link from 'next/link';

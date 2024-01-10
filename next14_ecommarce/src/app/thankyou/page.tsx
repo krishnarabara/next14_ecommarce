@@ -1,13 +1,13 @@
 import {IProduct, IProductItem} from 'boundless-api-client';
-import {apiClient, nativeFetch, revalidate} from '@/lib/api';
 import {notFound} from 'next/navigation';
-import {fetchBasicSettings} from '@/lib/settings';
 import {ProductLabels, ProductAttrs} from 'boundless-commerce-components';
-import AddToCart from '@/components/product/addToCart';
-import VariantPicker from '@/components/product/variantPicker';
-import PriceAndSku from '@/components/product/priceAndSku';
-import ProductGalleryBody from '@/components/product/productGalleryBody';
 import type {Metadata} from 'next';
+import { fetchBasicSettings } from '../../../lib/settings';
+import ProductGalleryBody from '../../../components/product/productGalleryBody';
+import VariantPicker from '../../../components/product/variantPicker';
+import PriceAndSku from '../../../components/product/price';
+import AddToCart from '../../../components/product/addToCart';
+import { apiClient, nativeFetch, revalidate } from '../../../lib/api';
 
 export default async function ProductPage({params: {slug}}: IProps) {
 	const product = await fetchProductBySlug(slug);

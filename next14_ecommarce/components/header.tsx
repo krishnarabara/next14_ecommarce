@@ -1,6 +1,6 @@
 import Link from 'next/link';
 import styles from './header/header.module.css';
-import AuthBar from '@/components/header/authBar';
+import AuthBar from './header/authBar';
 
 export default function Header() {
 	return (

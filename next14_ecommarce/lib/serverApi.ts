@@ -1,5 +1,6 @@
 import {BoundlessClient} from 'boundless-api-client';
-import {baseURL, instanceId, mediaServer, permanentToken, s3Prefix} from '@/lib/api';
+import { baseURL, instanceId, mediaServer, permanentToken, s3Prefix } from './api';
+
 
 export const makeApiClient = (): BoundlessClient => {
 	const apiClient = new BoundlessClient(permanentToken);

@@ -1,11 +1,11 @@
-import {fetchBasicSettings} from '@/lib/settings';
+import { fetchBasicSettings } from '../../lib/settings';
 import {notFound} from 'next/navigation';
 import {IProduct, ICategoryItem, ICategory, extractPaginationFromHeaders, IPagination} from 'boundless-api-client';
-import {apiClient, nativeFetch, revalidate} from '@/lib/api';
+import { apiClient, nativeFetch, revalidate } from '../../lib/api';
 import {Product, Products} from 'boundless-commerce-components';
 import Link from 'next/link';
 import {Metadata} from 'next';
-import Pagination from '@/components/pagination';
+// import Pagination from '@/components/pagination';
 
 export default async function CategoryPage({params: {slug}}: IProps) {
 	const category = await fetchCategory(slug);

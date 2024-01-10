@@ -3,15 +3,16 @@
 import {Form, Formik, FormikHelpers} from 'formik';
 import TextField from '@mui/material/TextField';
 import Button from '@mui/material/Button';
-import {apiErrors2Formik, formikFieldAttrs} from '@/lib/formUtils';
+import { apiErrors2Formik, formikFieldAttrs } from '../../lib/formUtils';
 import LoginIcon from '@mui/icons-material/Login';
-import {useCallback} from 'react';
-import {apiClient} from '@/lib/api';
+import {ChangeEvent, useCallback} from 'react';
+import { apiClient } from '../../lib/api';
 import {useCustomer} from 'boundless-commerce-components/dist/client';
 import Link from 'next/link';
 import FormControlLabel from '@mui/material/FormControlLabel';
 import Checkbox from '@mui/material/Checkbox';
-import ErrorSummary from '@/components/errorSummary';
+import ErrorSummary from '../errorSummary';
+
 
 export default function RegisterForm() {
 	const {onSubmit} = useSubmitRegisterForm();
@@ -21,7 +22,7 @@ export default function RegisterForm() {
 			initialValues={{email: '', password: '', re_password: '', first_name: '', last_name: '', receive_marketing_info: true}}
 			onSubmit={onSubmit}
 		>
-			{(formikProps) => (
+			{(formikProps: { values: { receive_marketing_info: boolean | undefined; }; handleChange: ((event: ChangeEvent<HTMLInputElement>, checked: boolean) => void) | undefined; isSubmitting: boolean | undefined; }) => (
 				<Form className={'bg-light p-3'}>
 					<ErrorSummary />
 					<div className={'my-3'}>

@@ -3,10 +3,10 @@
 import {useCart} from 'boundless-commerce-components/dist/client';
 import CircularProgress from '@mui/material/CircularProgress';
 import {useCallback, useRef} from 'react';
+import { apiClient } from '../../../lib/api';
 import {startCheckout, StarterWrapper, resetCheckoutState} from 'boundless-checkout-react';
-import {apiClient} from '@/lib/api';
 import {createGetStr} from 'boundless-api-client';
-// import {useRouter} from 'next/navigation'
+import {useRouter} from 'next/navigation'
 
 export default function BoundlessCheckout() {
 	const {cartId} = useCart();
@@ -33,7 +33,7 @@ export default function BoundlessCheckout() {
 						console.log('unknown element: ', element);
 					}
 				},
-				onThankYouPage: (data) => {
+				onThankYouPage: (data: { orderId: any; }) => {
 					resetCheckoutState();
 					window.location.assign(`/thank-you/${data.orderId}`);
 				},

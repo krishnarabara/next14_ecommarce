@@ -1,13 +1,14 @@
 import {IProduct, IProductItem} from 'boundless-api-client';
-import {apiClient, nativeFetch, revalidate} from '@/lib/api';
+
 import {notFound} from 'next/navigation';
-import {fetchBasicSettings} from '@/lib/settings';
 import {ProductLabels, ProductAttrs} from 'boundless-commerce-components';
-import AddToCart from '@/components/product/addToCart';
-import VariantPicker from '@/components/product/variantPicker';
-import PriceAndSku from '@/components/product/priceAndSku';
-import ProductGalleryBody from '@/components/product/productGalleryBody';
 import type {Metadata} from 'next';
+import { fetchBasicSettings } from '../../../lib/settings';
+import ProductGalleryBody from '../../../components/product/productGalleryBody';
+import VariantPicker from '../../../components/product/variantPicker';
+import { apiClient, nativeFetch, revalidate } from '../../../lib/api';
+import AddToCart from '../../../components/product/addToCart';
+import PriceAndSku from '../../../components/product/price';
 
 export default async function ProductPage({params: {slug}}: IProps) {
 	const product = await fetchProductBySlug(slug);
@@ -18,7 +19,7 @@ export default async function ProductPage({params: {slug}}: IProps) {
 	}
 
 	return (
-		<>
+		<>// import {fetchBasicSettings} from '@/lib/settings';
 			<div className={'container'}>
 				<h1 className={'mb-2'}>{product.title}</h1>
 				{product.labels && <ProductLabels labels={product.labels} className={'mb-4'}/>}
@@ -38,7 +39,7 @@ export default async function ProductPage({params: {slug}}: IProps) {
 								/>
 							</>}
 						</div>
-						<ProductAttrs
+						<ProductAttrs// import {fetchBasicSettings} from '@/lib/settings';
 							characteristics={product.attributes}
 							manufacturer={product.manufacturer}
 							size={product.props.size}

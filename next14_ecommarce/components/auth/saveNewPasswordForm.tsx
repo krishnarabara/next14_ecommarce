@@ -2,17 +2,17 @@
 
 import {useState, useEffect, useCallback} from 'react';
 import {useRouter, useSearchParams} from 'next/navigation';
-import {apiClient} from '@/lib/api';
+import { apiClient } from '../../lib/api';
 import {ICustomer} from 'boundless-api-client';
-import LoadingScreen from '@/components/loadingScreen';
+import LoadingScreen from '../loadingScreen';
 import Alert from '@mui/material/Alert';
 import {Form, Formik, FormikHelpers} from 'formik';
 import TextField from '@mui/material/TextField';
-import {apiErrors2Formik, formikFieldAttrs} from '@/lib/formUtils';
+import { apiErrors2Formik, formikFieldAttrs } from '../../lib/formUtils';
 import Button from '@mui/material/Button';
 import LockOpenIcon from '@mui/icons-material/LockOpen';
 import {useCustomer} from 'boundless-commerce-components/dist/client';
-import ErrorSummary from '@/components/errorSummary';
+import ErrorSummary from '../errorSummary';   
 
 export default function SaveNewPasswordForm() {
 	const {screen, customer, authToken} = useSaveNewPassword();
@@ -32,7 +32,7 @@ export default function SaveNewPasswordForm() {
 
 	return (
 		<Formik initialValues={{password: '', password_repeat: ''}} onSubmit={onSubmit}>
-			{(formikProps) => (
+			{(formikProps: { isSubmitting: boolean | undefined; }) => (
 				<Form className={'bg-light p-3'}>
 					<ErrorSummary />
 					<div className={'my-3'}>
