@@ -1,4 +1,7 @@
-import {BoundlessClient} from '';
+// import {BoundlessClient} from '';
+// import { BoundlessClient } from './BoundlessClient';
+// import { BoundlessClient } from 'boundless-client-library';
+
 
 export const baseURL = process.env.NEXT_PUBLIC_BOUNDLESS_API_BASE_URL;
 export const permanentToken = process.env.NEXT_PUBLIC_BOUNDLESS_API_PERMANENT_TOKEN;

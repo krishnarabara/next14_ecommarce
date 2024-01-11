@@ -5,6 +5,7 @@ import { useParams } from 'next/navigation';
 import { useCallback, useRef } from 'react';
 import { apiClient } from '../lib/api';
 
+
 export default function ThankYou() {
 	const params = useParams();
 	const checkoutStarter = useRef<StarterWrapper>();

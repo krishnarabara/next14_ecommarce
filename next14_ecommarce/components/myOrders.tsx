@@ -24,7 +24,7 @@ export default function MyOrders({settings}: {settings: IBasicSettings}) {
 
 	useEffect(() => {
 		if (customer) {
-			apiClient.customerOrder.getOrders().then(({orders}) => {
+			apiClient.customerOrder.getOrders().then(({ }) => {
 				setOrders(orders);
 			});
 		}
@@ -71,3 +71,4 @@ export default function MyOrders({settings}: {settings: IBasicSettings}) {
 		</div>
 	);
 }
+

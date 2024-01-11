@@ -13,6 +13,7 @@ import Button from '@mui/material/Button';
 import LockOpenIcon from '@mui/icons-material/LockOpen';
 import {useCustomer} from 'boundless-commerce-components/dist/client';
 import ErrorSummary from '../errorSummary';   
+import { FormikProps } from "formik";
 
 export default function SaveNewPasswordForm() {
 	const {screen, customer, authToken} = useSaveNewPassword();
@@ -22,7 +23,7 @@ export default function SaveNewPasswordForm() {
 		return <LoadingScreen />;
 	}
 
-	if (screen === 'error') {
+	if (screen === 'error') { 
 		return (
 			<Alert severity="error">
 				Something went wrong. Please try again.
@@ -54,7 +55,7 @@ export default function SaveNewPasswordForm() {
 							fullWidth
 							{...formikFieldAttrs<INewPasswordFormValues>('password_repeat', formikProps)}
 						/>
-					</div>
+					</div>   
 					<div className={'my-3 text-end'}>
 						<Button variant="contained"
 										startIcon={<LockOpenIcon />}
@@ -117,4 +118,5 @@ const useSubmitForm = (customer?: ICustomer, authToken?: string) => {
 interface INewPasswordFormValues {
 	password: string;
 	password_repeat: string;
+	isSubmitting: boolean;
 }

@@ -39,7 +39,7 @@ const useFetchCartItems = () => {
 	const {cartId} = useCart();
 	const [items, setItems] = useState<ICartItem[]|undefined>();
 	const [isLoading, setIsLoading] = useState(false);
-
+    
 	const fetchCartItems = useCallback(() => {
 		if (!cartId) {
 			throw new Error('Attempt to fetch with empty cartId. If it is loaded?');
