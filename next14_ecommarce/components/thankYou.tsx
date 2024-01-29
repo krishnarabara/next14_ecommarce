@@ -3,7 +3,7 @@
 import { StarterWrapper } from 'boundless-checkout-react';
 import { useParams } from 'next/navigation';
 import { useCallback, useRef } from 'react';
-import { apiClient } from '../lib/api';
+import { apiClient } from '../lib/api';  
 
 
 export default function ThankYou() {

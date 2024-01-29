@@ -1,4 +1,4 @@
-// import {BoundlessClient} from '';
+ import BoundlessClient from 'boundless-commerce-components';
 // import { BoundlessClient } from './BoundlessClient';
 // import { BoundlessClient } from 'boundless-client-library';
 

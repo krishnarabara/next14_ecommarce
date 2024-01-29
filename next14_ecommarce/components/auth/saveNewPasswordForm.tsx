@@ -13,7 +13,8 @@ import Button from '@mui/material/Button';
 import LockOpenIcon from '@mui/icons-material/LockOpen';
 import {useCustomer} from 'boundless-commerce-components/dist/client';
 import ErrorSummary from '../errorSummary';   
-import { FormikProps } from "formik";
+import { FormikProps } from "formik"; 
+ 
 
 export default function SaveNewPasswordForm() {
 	const {screen, customer, authToken} = useSaveNewPassword();
@@ -30,9 +31,9 @@ export default function SaveNewPasswordForm() {
 			</Alert>
 		);
 	}
-
+  
 	return (
-		<Formik initialValues={{password: '', password_repeat: ''}} onSubmit={onSubmit}>
+		<Formik InitialValues={{password: '', password_repeat: ''}} onSubmit={onSubmit}>
 			{(formikProps: { isSubmitting: boolean | undefined; }) => (
 				<Form className={'bg-light p-3'}>
 					<ErrorSummary />
@@ -120,3 +121,5 @@ interface INewPasswordFormValues {
 	password_repeat: string;
 	isSubmitting: boolean;
 }
+
+  

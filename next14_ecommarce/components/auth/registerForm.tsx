@@ -12,6 +12,7 @@ import Link from 'next/link';
 import FormControlLabel from '@mui/material/FormControlLabel';
 import Checkbox from '@mui/material/Checkbox';
 import ErrorSummary from '../errorSummary';
+import { FormikProps } from 'formik';
 
 
 export default function RegisterForm() {

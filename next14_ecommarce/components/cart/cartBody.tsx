@@ -47,7 +47,7 @@ const useFetchCartItems = () => {
 
 		setIsLoading(true);
 		apiClient.cart.getCartItems(cartId)
-			.then(({items}) => {
+			.then(({}) => {
 				setItems(items);
 			})
 			.catch((err: any) => console.error(err))
